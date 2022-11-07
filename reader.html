@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector QR</title>
+    <link rel="stylesheet" href="reader.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav>
+        <div>
+            <a class="btn_back" href="index.html">◀</a>
+            <p class="title_reader">Lector QR</p>    
+        </div>
+    </nav>
+    <div class="container">
+        <video id="preview"></video>
+        <imput name="" id="qrcontent" hidden></imput>
+        <div class="container_btn">
+            <a id="btn_copy" class="btn_copy" hidden>Copiar</a>
+            <a id="btn_go" class="btn_go" target="_blank" hidden>Ir</a>
+        </div>
+        <a id="btn_refresh" class="btn_refresh" href="" hidden>Volver a escanear</a>
+    </div>
+
+
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script src="reader.js"></script>
+</body>
+</html>
