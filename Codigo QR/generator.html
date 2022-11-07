@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar QR</title>
+    <link rel="stylesheet" href="generator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div>
+            <a class="btn_back" href="index.html">◀</a>
+            <p class="title_generator">Generador QR</p>    
+        </div>
+    </nav>
+    <div id="container" class="container">
+        <form action="" id="form" class="form">
+            <input type="text" id="link" class="link" placeholder="Ingrese el enlace o URL">
+            <button class="btn" type="submit">Generar QR</button>
+
+        </form>
+        <div id="containerQR" class="containerQR"></div>
+        <a id="btn_download" class="btn_download" download="CodigoQR" hidden>Descargar QR</a>
+        <a id="btn_print" class="btn_print" onclick="imprimir()" hidden>imprimir QR</a>
+    </div>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="generator.js"></script>
+</body>
+</html>
