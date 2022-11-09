@@ -122,6 +122,35 @@ video{
 	background: #85528b;
 }
 
+.scann{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.changeCamera{
+	width: 25px;
+	height: 25px;
+	position: relative;
+    left: 125px;
+    bottom: 40px;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.changeCamera img{
+	width: 100%;
+}
+
+/* .changeCamera:focus{
+	-webkit-transform: rotatey(180deg);
+    transition: 1s linear;
+
+} */
+
+
 .message{
 	position: absolute;
     bottom: 10%;
@@ -131,3 +160,5 @@ video{
 	transition: opacity 0.5s linear;
 	opacity: 0;
 }
+
+

@@ -8,25 +8,31 @@ var result;
 
 Instascan.Camera.getCameras().then(function (cameras){
 
-    const check = document.getElementById('changeCamera');
-
     if(cameras.length>1){
+        const check = document.getElementById('changeCamera');
+        check.removeAttribute('hidden');
         scanner.start(cameras[1]);
+        cam = 1;
 
-        check.addEventListener('change', function(){
-            if(this.checked){
+        check.addEventListener('click', function(){
+            check.setAttribute('style', '-webkit-transform: rotatey(180deg); transition: 1s linear;');
+
+            if(cam==0){
                 scanner.stop();
-                scanner.start(cameras[0]);
-            }else{
+                scanner.start(cameras[1]);
+            }
+            else{
                 scanner.stop();
                 scanner.start(cameras[0]);
             }
+            check.removeAttribute('style');
         })
 
     }else{  
         if(cameras.length>0){
             scanner.start(cameras[0]);
-        }else{
+        }
+        else{
             console.error('No se encontraron cámaras.');
             alert('No se encontraron cámaras.');
         }

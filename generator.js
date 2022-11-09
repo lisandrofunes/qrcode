@@ -28,9 +28,9 @@ function addBtn(){
 }
 
 function imprimir(){
-    var asdasdad = document.getElementById('containerQR').innerHTML;
-    var body = document.querySelector('body').innerHTML;
-    document.querySelector('body').innerHTML = asdasdad;
+    const qr = document.getElementById('containerQR').innerHTML;
+    const body = document.querySelector('body').innerHTML;
+    document.querySelector('body').innerHTML = qr;
     window.print();
     document.querySelector('body').innerHTML = body;
 }
