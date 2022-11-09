@@ -2,6 +2,7 @@ body{
 	margin: 0;
     background-color: #efefef;
     font-family: 'Poppins', sans-serif;
+	user-select: none;
 }
 nav{
 	background-color: #331E36;
