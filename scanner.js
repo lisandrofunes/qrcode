@@ -20,10 +20,12 @@ Instascan.Camera.getCameras().then(function (cameras){
             if(cam==0){
                 scanner.stop();
                 scanner.start(cameras[1]);
+                cam = 1;
             }
             else{
                 scanner.stop();
                 scanner.start(cameras[0]);
+                cam = 0;
             }
             check.removeAttribute('style');
         })
