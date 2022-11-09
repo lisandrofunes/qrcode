@@ -7,9 +7,22 @@ var scanner = new Instascan.Scanner({
 var result;
 
 Instascan.Camera.getCameras().then(function (cameras){
+
+    const check = document.getElementById('changeCamera');
+
     if(cameras.length>1){
-        changeCamera();
         scanner.start(cameras[1]);
+
+        check.addEventListener('change', function(){
+            if(this.checked){
+                scanner.stop();
+                scanner.start(cameras[0]);
+            }else{
+                scanner.stop();
+                scanner.start(cameras[0]);
+            }
+        })
+
     }else{  
         if(cameras.length>0){
             scanner.start(cameras[0]);
@@ -80,20 +93,4 @@ function copy(){
     setTimeout(function(){
         imput.remove();
     }, 3000)
-}
-
-function changeCamera(){
-    const check = document.getElementById('changeCamera');
-    check.removeAttribute('hidden');
-
-    check.addEventListener('change', function(){
-        if(this.checked){
-            scanner.stop();
-            scanner.start(cameras[0]);
-        }else{
-            scanner.stop();
-            scanner.start(cameras[1]);
-        }
-    })
-
 }
