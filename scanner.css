@@ -87,6 +87,8 @@ video{
 }
 
 .btn_copy, .btn_go, .btn_refresh{
+	align-items: center;
+    justify-content: center;
 	width: 100%;
 	border: none;
     border-radius: 20px;
@@ -98,6 +100,11 @@ video{
     font-family: 'Poppins', sans-serif;
 	text-align: center;
 	text-decoration: none;
+}
+
+.btn_copy img, .btn_go img{
+	width: 20px;
+    margin: 0 10px;
 }
 
 .btn_copy:hover, .btn_go:hover{

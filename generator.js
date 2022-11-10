@@ -12,25 +12,39 @@ form.addEventListener('submit', (e) => {
 })
 
 function addBtn(){
-    const btn = document.getElementById('btn_download');
-    const btnp = document.getElementById('btn_print');
+    const btn_download = document.getElementById('btn_download');
+    const btn_share = document.getElementById('btn_share');
 
     let qrimg = document.querySelector('img');
-    let qrsrc = qrimg.getAttribute('src');   
+    let qrsrc = qrimg.getAttribute('src');
 
-    btn.removeAttribute('hidden');
-    btnp.removeAttribute('hidden');
+    btn_download.removeAttribute('hidden');
+    btn_share.removeAttribute('hidden');
     
-    btn.setAttribute('href', qrsrc);
+    btn_download.setAttribute('href', qrsrc);
 
-    btn.setAttribute('style', 'display: block;');
-    btnp.setAttribute('style', 'display: block;');
+    btn_download.setAttribute('style', 'display: flex;');
+    btn_share.setAttribute('style', 'display: flex;');
 }
 
-function imprimir(){
-    const qr = document.getElementById('containerQR').innerHTML;
-    const body = document.querySelector('body').innerHTML;
-    document.querySelector('body').innerHTML = qr;
-    window.print();
-    document.querySelector('body').innerHTML = body;
+async function share(){
+    let qrimg = document.querySelector('img');
+    let qrsrc = qrimg.getAttribute('src');
+    const response = await fetch(qrsrc);
+    const blob = await response.blob();
+    const filesArray = [
+        new File(
+            [blob],
+            'meme.jpg',
+            {
+              type: "image/jpeg",
+              lastModified: new Date().getTime()
+            }
+         )
+    ];
+    const shareData = {
+        files: filesArray,
+    };
+    navigator.share(shareData);
+
 }

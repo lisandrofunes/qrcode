@@ -47,6 +47,7 @@ Instascan.Camera.getCameras().then(function (cameras){
 scanner.addListener('scan', function(response){
     result = response;
     scanner.stop();
+    check.setAttribute('hidden', true);
     addElements();
 })
 
@@ -63,6 +64,7 @@ function addElements(){
     txt.innerHTML = result;
 
     btn_copy.removeAttribute('hidden');
+    btn_copy.setAttribute('style', 'display: flex;');
 
     var aux = 0;
     for(var i=0; i < result.length; i++){
@@ -74,6 +76,7 @@ function addElements(){
     if(aux == 0){
         btn_go.removeAttribute('hidden');
         btn_go.setAttribute('href', result);
+        btn_go.setAttribute('style', 'display: flex;');
     }
 
     btn_refresh.removeAttribute('hidden');

@@ -56,7 +56,7 @@ nav div{
 
 }
 
-.btn, .btn_download, .btn_print{
+.btn, .btn_download, .btn_share{
     width: 90%;
 	border: none;
     border-radius: 20px;
@@ -76,7 +76,10 @@ nav div{
 	background: #85528b;
 }
 
-.btn_download, .btn_print{
+.btn_download, .btn_share{
+	/* display: flex; */
+    align-items: center;
+    justify-content: center;
     margin: auto;
     width: 80%;
 	background: #28965A;
@@ -85,11 +88,11 @@ nav div{
 	margin-bottom: 15px;
 }
 
-.btn_download:hover, .btn_print:hover{
+.btn_download:hover, .btn_share:hover{
 	background: #3bbb75;
 }
 
-.btn_download:active, .btn_print:active{
+.btn_download:active, .btn_share:active{
 	background: #4fdf90;
 }
 
@@ -97,10 +100,10 @@ nav div{
     display: flex;
 	justify-content: center;
 	padding: 30px 0;
+	margin: 30px auto;
 }
 
-img{
-    margin: 30px auto;
-    /* box-shadow: rgb(100 100 111) 0px 0px 30px 0px; */
+.btn_download img, .btn_share img{
+	width: 25px;
+    margin: 0 5px;
 }
-
