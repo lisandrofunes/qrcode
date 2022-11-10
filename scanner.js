@@ -45,6 +45,7 @@ Instascan.Camera.getCameras().then(function (cameras){
 });
 
 scanner.addListener('scan', function(response){
+    const check = document.getElementById('changeCamera');
     result = response;
     scanner.stop();
     check.setAttribute('hidden', true);
