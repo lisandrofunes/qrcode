@@ -38,7 +38,7 @@ form.addEventListener('submit', (e) => {
     if (navigator.share){
         btn_share.removeAttribute('hidden');
     }
-    
+
     btnReload.removeAttribute('hidden')
 })
 
@@ -46,7 +46,7 @@ btn_download.addEventListener('click', () => {
     const qrCanvasWithBorder = containerQR.querySelector('canvas');
     const qrSrc = qrCanvasWithBorder.toDataURL('image/png');
     btn_download.setAttribute('href', qrSrc);
-    btn_download.setAttribute('download', 'qrcode_with_border.png');
+    btn_download.setAttribute('download', 'qrcode.png');
 });
 
 btn_share.addEventListener('click', () => {
