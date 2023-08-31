@@ -34,9 +34,11 @@ form.addEventListener('submit', (e) => {
     result.removeAttribute('hidden');
     result.style.animation = 'fadeIn 1s';
     btn_download.removeAttribute('hidden');
+
     if (navigator.share){
         btn_share.removeAttribute('hidden');
     }
+    
     btnReload.removeAttribute('hidden')
 })
 

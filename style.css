@@ -16,7 +16,6 @@
 }
 
 body{
-
     background-color: var(--bg-100) !important
 }
 
@@ -96,7 +95,6 @@ img {
     border-radius: 20px;
 	background: var(--bg-300);
 	color: var(--text-200);
-	/* box-shadow: #63636e 0px 7px 29px -15px; */
     outline: none;	
 }
 
