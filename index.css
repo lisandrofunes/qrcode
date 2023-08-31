@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 100vh;
+    gap: 2rem;
+    animation: fadeIn 1s;
+}
+
+.btn_option {
+    width: 200px;
+    height: 200px;
+    flex-direction: column;
+    padding: 18px;
+    gap: 10px;
+}

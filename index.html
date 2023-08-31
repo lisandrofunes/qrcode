@@ -1,27 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Codigo QR</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="description"content="Escáner y generador de códigos qr"/>
+    <meta name="robots"content="index,follow"/>
+    <meta name="keywords" content="scanner, generador de codigos qr, qr generator, qr scanner"/>
+    <meta name="author" content="Lisandro Funes"/>
+    <title>QR Code</title>
+    <link rel="icon" href="favicon.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
+    <!-- Boostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Boostrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
+
 <body>
-    <nav>
-        <div>
-            <p class="title_app">Codigo QR</p>    
+    <nav class="navbar">
+        <div class="container-fluid justify-content-center">
+            <a class="navbar-brand me-0" href="#">QR Code</a>
         </div>
     </nav>
 
-    <div class="container">
-        <a class="btn_lector" href="scanner.html"><img src="https://api.iconify.design/mdi:qrcode-scan.svg">Lector de QR</a>
-        <a class="btn_generator" href="generator.html"><img src="https://api.iconify.design/mdi:qrcode-edit.svg">Generador de QR</a>
+    <div class="container my-5">
+        <a class="btn_option" href="scanner.html">
+            <div class="picture"><img src="https://api.iconify.design/mdi:qrcode-scan.svg" class="img-fluid"></div>
+
+            <span>Escanear QR</span>
+        </a>
+        <a class="btn_option" href="generator.html">
+            <div class="picture"><img src="https://api.iconify.design/mdi:qrcode-edit.svg" class="img-fluid"></div>
+
+            <span>Generar QR</span>
+        </a>
     </div>
+
+    <footer>
+        <div class="footer">
+            <span>Desarrollado por <a href="https://lisandro-funes.web.app/" target="_blank"><b>LISANDRO FUNES</b></a></span>
+            <!-- <div class="social_footer">
+                <a href="https://lisandro-funes.web.app/" target="_blank" class="social_item"><i class="bi bi-briefcase-fill d-flex"></i></i></a>
+                <a href="https://www.linkedin.com/in/lisandrofunes/" target="_blank" class="social_item"><i class="bi bi-linkedin d-flex"></i></a>
+            </div> -->
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous">
+    </script>
 </body>
+
+
 </html>

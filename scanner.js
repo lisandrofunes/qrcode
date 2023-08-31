@@ -57,7 +57,7 @@ function addElements(){
     const btn_go = document.getElementById('btn_go');
     const btn_refresh = document.getElementById('btn_refresh');
     const vid = document.getElementById('preview');
-    let txt = document.getElementById('qrcontent');
+    const txt = document.getElementById('qrcontent');
 
     vid.setAttribute('style', 'display: none;');
 

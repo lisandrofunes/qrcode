@@ -1,50 +1,62 @@
 const containerQR = document.getElementById('containerQR');
 const form = document.getElementById('form');
+const btn_download = document.getElementById('btn_download');
+const btn_share = document.getElementById('btn_share');
+const btnReload = document.getElementById('btnReload');
+const result = document.getElementById('result');
 
 const QR = new QRCode(containerQR);
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     QR.makeCode(form.link.value);
-    setTimeout(() => {
-        addBtn();
-    }, 300)
+
+    // Añadir un borde blanco al código QR
+    const qrCanvas = containerQR.querySelector('canvas');
+    const totalSize = qrCanvas.width + 2 * 10; //10 representa el tamaño del borde
+
+    const canvasWithBorder = document.createElement('canvas');
+    canvasWithBorder.width = canvasWithBorder.height = totalSize;
+    const context = canvasWithBorder.getContext('2d');
+
+    // Llenar el canvas con píxeles blancos
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, totalSize, totalSize);
+
+    // Dibujar el código QR en el centro del nuevo canvas
+    context.drawImage(qrCanvas, 10, 10);
+
+    // Reemplazar el contenido del contenedor con el nuevo canvas
+    containerQR.innerHTML = '';
+    containerQR.appendChild(canvasWithBorder);
+
+    form.setAttribute('hidden', true)
+    result.removeAttribute('hidden');
+    result.style.animation = 'fadeIn 1s';
+    btn_download.removeAttribute('hidden');
+    if (navigator.share){
+        btn_share.removeAttribute('hidden');
+    }
+    btnReload.removeAttribute('hidden')
 })
 
-function addBtn(){
-    const btn_download = document.getElementById('btn_download');
-    const btn_share = document.getElementById('btn_share');
+btn_download.addEventListener('click', () => {
+    const qrCanvasWithBorder = containerQR.querySelector('canvas');
+    const qrSrc = qrCanvasWithBorder.toDataURL('image/png');
+    btn_download.setAttribute('href', qrSrc);
+    btn_download.setAttribute('download', 'qrcode_with_border.png');
+});
 
-    let qrimg = document.querySelector('img');
-    let qrsrc = qrimg.getAttribute('src');
+btn_share.addEventListener('click', () => {
+    const qrCanvasWithBorder = containerQR.querySelector('canvas');
+    const qrSrc = qrCanvasWithBorder.toDataURL('image/png');
+    navigator.share({
+        title: 'QR Code',
+        text: 'Check out this QR code!',
+        url: qrSrc,
+    })
+});
 
-    btn_download.removeAttribute('hidden');
-    btn_share.removeAttribute('hidden');
-    
-    btn_download.setAttribute('href', qrsrc);
-
-    btn_download.setAttribute('style', 'display: flex;');
-    btn_share.setAttribute('style', 'display: flex;');
-}
-
-async function share(){
-    let qrimg = document.querySelector('img');
-    let qrsrc = qrimg.getAttribute('src');
-    const response = await fetch(qrsrc);
-    const blob = await response.blob();
-    const filesArray = [
-        new File(
-            [blob],
-            'meme.jpg',
-            {
-              type: "image/jpeg",
-              lastModified: new Date().getTime()
-            }
-         )
-    ];
-    const shareData = {
-        files: filesArray,
-    };
-    navigator.share(shareData);
-
-}
+btnReload.addEventListener('click', () =>{
+    location.reload();
+})

@@ -1,42 +1,7 @@
-body{
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #efefef;
-	user-select: none;
-}
-
-nav{
-	background: #331E36;
-}
-
-nav div{
-	display: flex;
-	max-width: 400px;
-	margin: auto;
-	color: #fff;
-	align-items: center;
-}
-
-.btn_back{
-	width: 30px;
-	padding: 15px;
-	position: absolute;
-	cursor: pointer;
-	text-align: center;
-	color: #fff;
-	text-decoration: none;
-}
-
-.title_reader{
-	margin: 15px auto;
-}
-
-.container{
+.container, .scann{
     display: flex;
 	flex-direction: column;
 	align-items: center;
-    margin: 30px auto;
-    max-width: 400px;
 }
 
 video{
@@ -44,95 +9,6 @@ video{
     height: 20em;
     object-fit: cover;
     border-radius: 20px;
-}
-
-.qrcontent{
-	cursor: default;
-	user-select: text;
-	border-radius: 20px 20px 4px 4px;
-	resize: none;
-	padding: 15px;
-	border: none;
-	background: #fff;
-	width: 90%;
-	box-shadow: #63636e 0px 7px 29px -15px;
-	font-size: 16px;
-	margin: 15px auto;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-	overflow-x: scroll;
-	white-space: nowrap;
-	
-	/* text-overflow: ellipsis; */
-}
-
-.qrcontent::-webkit-scrollbar{
-	height: 8px;
-	background-color: #acabab;
-	border-radius: 4px;
-}
-
-.qrcontent::-webkit-scrollbar-thumb {
-    background: #331E36;
-    border-radius: 4px;
-}
-
-
-
-.container_btn{
-	display: flex;
-	width: 90%;
-	justify-content: space-between;
-	gap: 5px;
-}
-
-.btn_copy, .btn_go, .btn_refresh{
-	align-items: center;
-    justify-content: center;
-	width: 100%;
-	border: none;
-    border-radius: 20px;
-	background: #28965A;
-	color: #fff;
-	cursor: pointer;
-	padding: 15px 0;
-	font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-	text-align: center;
-	text-decoration: none;
-}
-
-.btn_copy img, .btn_go img{
-	width: 20px;
-    margin: 0 10px;
-}
-
-.btn_copy:hover, .btn_go:hover{
-	background: #3bbb75;
-}
-
-.btn_copy:active, .btn_go:active{
-	background: #4fdf90;
-}
-
-.btn_refresh{
-	width: 90%;
-	margin-top: 15px;
-	background: #331E36;
-}
-
-.btn_refresh:hover, .btn_back:hover{
-	background: #5f3a64;
-}
-
-.btn_refresh:active, .btn_back:active{
-	background: #85528b;
-}
-
-.scann{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .changeCamera{
@@ -151,13 +27,6 @@ video{
 	width: 100%;
 }
 
-/* .changeCamera:focus{
-	-webkit-transform: rotatey(180deg);
-    transition: 1s linear;
-
-} */
-
-
 .message{
 	position: absolute;
     bottom: 10%;
@@ -167,5 +36,3 @@ video{
 	transition: opacity 0.5s linear;
 	opacity: 0;
 }
-
-
