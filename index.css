@@ -1,7 +1,9 @@
 .container {
     display: flex;
     justify-content: center;
+    align-content: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
     height: 100vh;
     gap: 2rem;
     animation: fadeIn 1s;
