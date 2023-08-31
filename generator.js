@@ -35,9 +35,9 @@ form.addEventListener('submit', (e) => {
     result.style.animation = 'fadeIn 1s';
     btn_download.removeAttribute('hidden');
 
-    if (navigator.share){
-        btn_share.removeAttribute('hidden');
-    }
+    // if (navigator.share){
+    //     btn_share.removeAttribute('hidden');
+    // }
 
     btnReload.removeAttribute('hidden')
 })
@@ -49,15 +49,15 @@ btn_download.addEventListener('click', () => {
     btn_download.setAttribute('download', 'qrcode.png');
 });
 
-btn_share.addEventListener('click', () => {
-    const qrCanvasWithBorder = containerQR.querySelector('canvas');
-    const qrSrc = qrCanvasWithBorder.toDataURL('image/png');
-    navigator.share({
-        title: 'QR Code',
-        text: 'Check out this QR code!',
-        url: qrSrc,
-    })
-});
+// btn_share.addEventListener('click', () => {
+//     const qrCanvasWithBorder = containerQR.querySelector('canvas');
+//     const qrSrc = qrCanvasWithBorder.toDataURL('image/png');
+//     navigator.share({
+//         title: 'QR Code',
+//         text: 'Check out this QR code!',
+//         url: qrSrc,
+//     })
+// });
 
 btnReload.addEventListener('click', () =>{
     location.reload();
